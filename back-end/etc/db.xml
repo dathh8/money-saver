@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<schema>
+    <table name="database_history1" comment="Database History">
+        <column type="int" name="entity_id" nullable="false" identity="true" comment="Entity Id"/>
+        <column type="varchar" name="table_name" nullable="true" length="255" comment="Table Name"/>
+        <column type="text" name="column_data" nullable="true" comment="Column Data"/>
+        <column type="text" name="constraint_data" nullable="true" comment="Constraint Data"/>
+        <column type="datetime" name="updated_at" nullable="false" default="current_timestamp" update="current_timestamp" comment="Updated At"/>
+        <column type="datetime" name="created_at" nullable="false" default="current_timestamp" comment="Created At"/>
+        <constraint type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint type="unique" referenceId="COLUMN_UNIQUE">
+            <column name="campaign_title"/>
+            <column name="brand"/>
+            <column name="marketing_channel"/>
+        </constraint>
+        <constraint type="btree" referenceId="ENTITY_ID">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+    <table name='user' comment='User'>
+        <column type='int' name='user_id' nullable='false' identity='true' comment='User Id'/>
+        <column type='varchar' name='first_name' nullable='true' length='255' comment='User First Name'/>
+        <column type='varchar' name='last_name' nullable='true' length='255' comment='User Last Name'/>
+        <column type='varchar' name='email' nullable='false' length='255' comment='User Email'/>
+        <column type='varchar' name='password' nullable='false' length='255' comment='User Password'/>
+        <column type='int' name='role_id' nullable='false' comment='User Role'/>
+        <column type='datetime' name='updated_at' nullable='false' default='current_timestamp' update='current_timestamp' comment='Updated At'/>
+        <column type='datetime' name='created_at' nullable='false' default='current_timestamp' comment='Created At'/>
+        <constraint type='primary' referenceId='PRIMARY'>
+            <column name='user_id'/>
+        </constraint>
+    </table>
+</schema>
