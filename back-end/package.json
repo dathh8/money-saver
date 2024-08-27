@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon index.js",
-    "start": "node scripts/setup.js"
+    "start": "node scripts/setup.js",
+    "build" : "cd.. && cd front-end && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
