@@ -1,8 +1,9 @@
 // create a new express app
 const express = require('express');
+const env = require('./etc/env');
 const app = express();
-const port = 3000;
-const routers = require('./routers/routers')
+const port = env.port;
+const routers = require('./routers/routers');
 
 Object.keys(routers.MAPPING_ROUTERS).forEach(function(key, idx, arr){
     app.use(key, routers.MAPPING_ROUTERS[key])
