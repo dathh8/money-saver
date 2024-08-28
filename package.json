@@ -8,7 +8,7 @@
     "build-frontend": "react-scripts build",
     "start-backend": "cd back-end && node scripts/setup.js",
     "start-frontend": "cd front-end && npm start",
-    "build": "cd.. && cd front-end && npm install && npm run build",
+    "build": "cd back-end && npm install && cd .. && cd front-end && npm install && npm run build",
     "start": "concurrently \"npm-run-all -p start-backend start-frontend\""
   },
   "dependencies": {
